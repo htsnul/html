@@ -1,6 +1,6 @@
 ## Intro
 
-Convert an HTML string into a document fragment.
+Convert an HTML string to a `DocumentFragment`.
 
 ## Usage
 
