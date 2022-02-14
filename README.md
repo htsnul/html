@@ -2,6 +2,12 @@
 
 Convert an HTML string to a `DocumentFragment`.
 
+Freatures:
+
+* Can insert inline JavaScript property.
+* Can insert inline `DocumentFragment` or an array of them.
+* Can reference `HTMLElement` by callback.
+
 ## Usage
 
 ```js
