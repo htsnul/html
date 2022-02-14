@@ -50,7 +50,9 @@ class MyComponent extends HTMLElement {
         ${[...Array(3)].map(() =>
           createButton({ onClick: () => this.#handleClick() })
         )}
-        ${createButton({ onClick: () => this.#handleClick() })}
+        <my-button
+          props=${{ text: "Button", onClick: () => this.#handleClick() }}
+        ></my-button>
         <input ref=${(el) => (this.#input = el)} />
       </div>
     `);
