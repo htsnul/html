@@ -2,9 +2,13 @@ export default function html(strs, ...vals) {
   const attrs = [];
   const frags = [];
   const preserveFrag = (frag) => {
+    if (frag.firstElementChild === null) {
+      return frag.textContent;
+    }
     frags.push(frag);
-    const tagName = frag.firstElementChild.tagName;
-    return `<${tagName} id="_${frags.length - 1}"></${tagName}>`;
+    const el = document.createElement(frag.firstElementChild.tagName);
+    el.setAttribute("id", `_${frags.length - 1}`);
+    return el.outerHTML;
   };
   const text =
     vals
@@ -49,4 +53,3 @@ export default function html(strs, ...vals) {
   });
   return fragment;
 }
-
